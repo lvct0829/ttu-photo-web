@@ -128,15 +128,15 @@ import { ref, onMounted } from 'vue'
 const classes = [
   { 
     title: '基礎攝影講座', 
-    img: '/img/lectures/class1.jpg' 
+    img: 'img/lectures/class1.jpg' 
   },
   { 
     title: '星空攝影講座', 
-    img: '/img/lectures/class2.jpg' 
+    img: 'img/lectures/class2.jpg' 
   },
   { 
     title: '婚紗攝影講座', 
-    img: '/img/lectures/class3.jpg' 
+    img: 'img/lectures/class3.jpg' 
   }
 ]
 
@@ -147,19 +147,19 @@ const photowalks = [
   },
   { 
     title: '婚紗外拍', 
-    img: '/img/camps/walk2.jpg' 
+    img: 'img/camps/walk2.jpg' 
   },
   { 
     title: '建築外拍', 
-    img: '/img/camps/walk3.jpg' 
+    img: 'img/camps/walk3.jpg' 
   },
   { 
     title: '食物外拍', 
-    img: '/img/camps/walk4.jpg' 
+    img: 'img/camps/walk4.jpg' 
   },
   { 
     title: '動態外拍', 
-    img: '/img/camps/walk5.jpg' 
+    img: 'img/camps/walk5.jpg' 
   }
 ]
 
@@ -178,7 +178,7 @@ const exhibitionsAndAwards = [
           或許
           是否有記錄下瞬間的照片
           本身是不矛盾的吧`,
-    img: '/img/Open-Source-Activity/exhibition.png'
+    img: 'img/Open-Source-Activity/exhibition.png'
   }
 ]
 
