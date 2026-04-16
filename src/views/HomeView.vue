@@ -2,7 +2,7 @@
   <div>
     <section
       class="relative overflow-hidden noise-bg min-h-[calc(100vh-3.5rem)] flex items-center py-16 md:py-0 bg-cover bg-center"
-      style="background-image: url('/IMG_9651.jpg');"
+      style="background-image: url('IMG_9651.jpg');"
     >
       <div class="absolute inset-0 bg-black/40"></div>
 
@@ -153,17 +153,17 @@ const whatWeDoItems = [
   {
     title: '平日社課',
     desc: '邀請不同類型的攝影師來為我們上課，傳授實用的攝影技巧與獨門心法。',
-    img: '/class.jpg',
+    img: 'class.jpg',
   },
   {
     title: '假日實拍',
     desc: '假日會請攝影師帶領我們去做實拍的練習，走出戶外，將課堂理論化為鏡頭下的實作。',
-    img: '/outdoor.jpg',
+    img: 'outdoor.jpg',
   },
   {
     title: '年度競賽',
     desc: '每年都會舉辦「光影之間」攝影比賽，投稿者來自全台各地的高中職及大專院校的學生。',
-    img: '/contest.jpg',
+    img: 'contest.jpg',
   },
 ]
 
