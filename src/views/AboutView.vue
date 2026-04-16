@@ -28,9 +28,9 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-7xl mx-auto">
           
-          <div class="bg-black border border-white/10 p-12 md:p-14 min-h-[350px] md:min-h-[400px] flex flex-col justify-end hover:border-[#e6a23c] transition-colors duration-500 group relative overflow-hidden z-0 rounded-sm shadow-2xl">
+          <div class="bg-black border border-white/10 p-12 md:p-14 min-h-[350px] md:min-h-[400px] flex flex-col justify-end hover:border-[#e6a23c] transition-colors duration-500 group relative overflow-hidden z-0 rounded-xl shadow-2xl">
             <div 
-              class="absolute inset-0 z-[-1] opacity-20 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              class="absolute inset-0 z-[-1] opacity-20 bg-cover bg-center transition-all duration-700 group-hover:scale-110 group-hover:opacity-60"
               :style="{ backgroundImage: `url(${basePath}class.jpg)` }"
             ></div>
             <div class="relative z-10 text-left">
@@ -41,9 +41,9 @@
             </div>
           </div>
 
-          <div class="bg-black border border-white/10 p-12 md:p-14 min-h-[350px] md:min-h-[400px] flex flex-col justify-end hover:border-[#e6a23c] transition-colors duration-500 group relative overflow-hidden z-0 rounded-sm shadow-2xl">
+          <div class="bg-black border border-white/10 p-12 md:p-14 min-h-[350px] md:min-h-[400px] flex flex-col justify-end hover:border-[#e6a23c] transition-colors duration-500 group relative overflow-hidden z-0 rounded-xl shadow-2xl">
             <div 
-              class="absolute inset-0 z-[-1] opacity-20 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              class="absolute inset-0 z-[-1] opacity-20 bg-cover bg-center transition-all duration-700 group-hover:scale-110 group-hover:opacity-60"
               :style="{ backgroundImage: `url(${basePath}outdoor.jpg)` }"
             ></div>
             <div class="relative z-10 text-left">
@@ -54,9 +54,9 @@
             </div>
           </div>
 
-          <div class="bg-black border border-white/10 p-12 md:p-14 min-h-[350px] md:min-h-[400px] flex flex-col justify-end hover:border-[#e6a23c] transition-colors duration-500 group relative overflow-hidden z-0 rounded-sm shadow-2xl">
+          <div class="bg-black border border-white/10 p-12 md:p-14 min-h-[350px] md:min-h-[400px] flex flex-col justify-end hover:border-[#e6a23c] transition-colors duration-500 group relative overflow-hidden z-0 rounded-xl shadow-2xl">
             <div 
-              class="absolute inset-0 z-[-1] opacity-20 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              class="absolute inset-0 z-[-1] opacity-20 bg-cover bg-center transition-all duration-700 group-hover:scale-110 group-hover:opacity-60"
               :style="{ backgroundImage: `url(${basePath}contest.jpg)` }"
             ></div>
             <div class="relative z-10 text-left">
