@@ -71,7 +71,7 @@ const members = ref([
   {
     name: '鄭安妤',
     title: '社長',
-    photo: '/president.jpeg', 
+    photo: 'president.jpeg', 
     bio: `對我來說社團和課業是並行的存在 缺一不可
 玩的時候玩 該認真的時候認真
 誰都不能阻止我帶相機出去玩！
@@ -113,7 +113,7 @@ const members = ref([
   {
     name: '邱宥彥',
     title: '副社長',
-    photo: '/vp.jpg',
+    photo: 'vp.jpg',
     bio: `哈嘍 我機材2B的邱宥諺
 興趣是拍照、打鼓、騎車
 本人比較內向 但熟了之後會挺瘋的
@@ -123,11 +123,12 @@ const members = ref([
   {
     name: '黃宥傑',
     title: '副社長/器材長',
-    photo: '/vp2.JPG',
+    photo: 'vp2.JPG',
     bio: `嗨～～我是資工2B的黃宥傑
 一個愛作夢ㄉ人
 網頁有問題麻煩聯繫我（？
 
+＃lvct0829
 ＃INFP
 ＃什麼都會,但什麼都不精通
 ＃拖延症末期
@@ -139,7 +140,7 @@ const members = ref([
   {
     name: '施竣友',
     title: '器材/文書',
-    photo: '/gear.jpg', 
+    photo: 'gear.jpg', 
     bio: `大家好我是機材2A的施竣友
 目前擔任文書與器材
 是大學才開始接觸相機的
@@ -149,7 +150,7 @@ const members = ref([
   {
     name: '鄒倢宜',
     title: '總務',
-    photo: '/IMG_5656.jpg',
+    photo: 'IMG_5656.jpg',
     bio: `大家好～我是電機二B的鄒倢宜
 目前在攝影社擔任總務📸
 平常除了跟著攝影社一起外拍
@@ -163,7 +164,7 @@ const members = ref([
   {
     name: '張芯慈',
     title: '美宣/公關',
-    photo: '/IMG_1565.jpg',
+    photo: 'IMG_1565.jpg',
     bio: `我是美宣兼公關 媒設系 2B 的張芯慈✨ 
 
 我平常很喜歡跳舞 💃  
@@ -181,7 +182,7 @@ const members = ref([
   {
     name: '陳采融',
     title: '美宣/公關',
-    photo: '/IMG_7555.JPG',
+    photo: 'IMG_7555.JPG',
     bio: `能有時間自己“一個人”出門的時候喜歡找幾個地方走走拍照
 正在學習拍人像、周邊中
 （買了很多也想讓它們有好看的照片）
