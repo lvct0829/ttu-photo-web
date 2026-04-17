@@ -26,7 +26,7 @@
 
     <div class="relative bg-black -mt-[25%] md:-mt-[70%] z-30">
       
-      <div class="absolute inset-0 z-0 opacity-25 bg-[url('/poster.png')] bg-[length:280px_auto] md:bg-[length:600px_auto] bg-repeat bg-fixed bg-center"></div>
+      <div class="absolute inset-0 z-0 opacity-25 bg-[url('/poster.png')] bg-[length:140px_auto] md:bg-[length:600px_auto] bg-repeat bg-fixed bg-center"></div>
 
       <div class="relative z-10">
         
