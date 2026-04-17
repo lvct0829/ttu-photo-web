@@ -6,7 +6,7 @@
       <img src="/poster.png" alt="光影之間：定格" class="w-full h-auto object-contain block relative z-0" />
       <img src="/overlay.png" alt="定格標題" class="absolute top-0 left-0 w-full h-auto z-10 pointer-events-none block" />
 
-      <div class="absolute inset-0 z-40 pointer-events-none flex flex-col justify-start pt-[55%] px-[10%] md:px-[15%] gap-24 md:gap-32">
+      <div class="absolute inset-0 z-40 pointer-events-none flex flex-col justify-start pt-[55%] px-[10%] md:px-[15%] gap-6 md:gap-10">
         <div class="reveal-el reveal-left text-left w-full">
           <p class="text-[clamp(12px,2.5vw,24px)] tracking-[0.3em] leading-loose text-white font-serif drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)]">
             或許<br>是否有記錄下瞬間的照片<br>本身是不矛盾的吧

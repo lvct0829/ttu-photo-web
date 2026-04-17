@@ -72,7 +72,20 @@ const members = ref([
     name: '鄭安妤',
     title: '社長',
     photo: 'president.jpeg', 
-    bio: `對我來說社團和課業是並行的存在 缺一不可\n玩的時候玩 該認真的時候認真\n誰都不能阻止我帶相機出去玩！\n玩到哪拍到哪 假日不出門就渾身不對勁\n每個東西都能拍 朋友就是我的模特兒\n\n#IE切換自如\n明明是個E人，但有的時候比I人還I\n不是故意不理人、擺臭臉，只是有時候累了\n人在魂不在 可以把她喚醒 但不一定會成功\n是個自來熟又社恐的矛盾仔`,
+    bio: `對我來說社團和課業是並行的存在 缺一不可\n
+玩的時候玩 該認真的時候認真\n
+誰都不能阻止我帶相機出去玩！\n
+玩到哪拍到哪 假日不出門就渾身不對勁\n
+每個東西都能拍 朋友就是我的模特兒\n
+#IE切換自如\n
+#秒回仔\n
+#緊張大師\n
+#幼稚鬼\n
+#看起來很閒\n
+#好奇寶寶\n
+#樣樣行樣樣不行\n
+
+@anyu_zheng @anyu_photo`,
     socials: [
       { label: 'anyu_zheng', url: 'https://www.instagram.com/anyu_zheng' },
       { label: 'anyu_photo', url: 'https://www.instagram.com/anyu_photo' }
