@@ -21,7 +21,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             <div class="absolute bottom-6 left-6">
               <h3 class="text-lg font-bold tracking-wide">{{ item.title }}</h3>
-              <p class="text-white/40 text-[10px] mt-1 tracking-widest uppercase">Education / Workshop</p>
+              <p class="text-white/40 text-[10px] mt-1 tracking-widest uppercase"></p>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             <div class="relative z-10">
               <h3 class="text-xl font-bold mb-2">{{ item.title }}</h3>
-              <p class="text-white/60 text-xs leading-relaxed line-clamp-2">走出校園，將課堂上的攝影理論化為真實鏡頭下的光影創作。</p>
+              <p class="text-white/60 text-xs leading-relaxed line-clamp-2"></p>
             </div>
           </div>
         </div>
