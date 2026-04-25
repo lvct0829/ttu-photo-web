@@ -2,8 +2,8 @@
   <div class="bg-black min-h-screen pt-14 p-0 relative overflow-x-hidden text-white font-sans">
     
     <div class="relative w-full z-0">
-      <img src="/poster.png" class="w-full h-auto object-contain block relative z-0" />
-      <img src="/overlay.png" class="absolute top-0 left-0 w-full h-auto z-10 pointer-events-none block" />
+      <img src="poster.png" class="w-full h-auto object-contain block relative z-0" />
+      <img src="overlay.png" class="absolute top-0 left-0 w-full h-auto z-10 pointer-events-none block" />
 
       <div class="absolute inset-0 z-40 pointer-events-none flex flex-col justify-start pt-[55%] px-[10%] md:px-[15%] gap-20 md:gap-32">
         <div class="reveal-el reveal-left text-left w-full">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="relative bg-black -mt-[35%] md:-mt-[75%] z-30 pb-32">
-      <div class="absolute inset-0 z-0 opacity-30 bg-[url('/poster.png')] bg-cover bg-fixed bg-center"></div>
+      <div class="absolute inset-0 z-0 opacity-30 bg-[url('poster.png')] bg-cover bg-fixed bg-center"></div>
 
       <div class="relative z-10">
 
@@ -73,8 +73,8 @@
                     <div class="w-full md:w-2/5 px-4">
                       <span class="text-xs font-bold mb-3 block tracking-wider" :class="photo.colorClass">{{ photo.award }}</span>
                       <h3 class="text-3xl font-serif mb-2 group-hover:text-[#e6a23c] transition-colors">{{ photo.title }}</h3>
-                      <p class="text-white/40 text-sm mb-4">{{ photo.author }}｜{{ photo.school }}</p>
-                      <p class="text-white/70 text-sm leading-loose">{{ photo.description }}</p>
+                      <p class="text-white/40 text-sm mb-4">{{ photo.author }} ｜ {{ photo.school }}</p>
+                      <p class="text-white/70 text-sm leading-loose tracking-wide">{{ photo.description }}</p>
                     </div>
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                   >
                     <img :src="photo.src" class="w-full hover:scale-105 transition-transform duration-1000" />
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span class="text-white text-xs tracking-widest">VIEW DETAIL</span>
+                      <span class="text-white text-xs tracking-widest uppercase">Detail</span>
                     </div>
                   </div>
                 </div>
@@ -113,8 +113,8 @@
                     <div class="w-full md:w-2/5 px-4">
                       <span class="text-xs font-bold mb-3 block tracking-wider" :class="photo.colorClass">{{ photo.award }}</span>
                       <h3 class="text-3xl font-serif mb-2 group-hover:text-[#e6a23c] transition-colors">{{ photo.title }}</h3>
-                      <p class="text-white/40 text-sm mb-4">{{ photo.author }}｜{{ photo.school }}</p>
-                      <p class="text-white/70 text-sm leading-loose">{{ photo.description }}</p>
+                      <p class="text-white/40 text-sm mb-4">{{ photo.author }} ｜ {{ photo.school }}</p>
+                      <p class="text-white/70 text-sm leading-loose tracking-wide">{{ photo.description }}</p>
                     </div>
                   </div>
                 </div>
@@ -129,13 +129,12 @@
                   >
                     <img :src="photo.src" class="w-full grayscale hover:grayscale-0 hover:scale-105 transition-all duration-1000" />
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span class="text-white text-xs tracking-widest">VIEW DETAIL</span>
+                      <span class="text-white text-xs tracking-widest uppercase">Detail</span>
                     </div>
                   </div>
                 </div>
               </section>
             </div>
-
           </div>
         </Transition>
       </div>
@@ -153,7 +152,7 @@
           <div class="w-full md:w-2/5 text-left bg-black/60 md:bg-transparent p-8 rounded-lg border border-white/5 md:border-none">
             <span v-if="activePhoto.award" class="text-xs font-bold tracking-[0.2em] block mb-3" :class="activePhoto.colorClass">{{ activePhoto.award }}</span>
             <h4 class="text-3xl md:text-4xl font-serif mb-2 text-white">{{ activePhoto.title }}</h4>
-            <p class="text-[#e6a23c]/80 text-sm mb-6 tracking-widest">{{ activePhoto.author }}｜{{ activePhoto.school }}</p>
+            <p class="text-[#e6a23c]/80 text-sm mb-6 tracking-widest">{{ activePhoto.author }} ｜ {{ activePhoto.school }}</p>
             <div class="h-px w-16 bg-[#e6a23c] mb-8 opacity-50"></div>
             <p class="text-white/90 text-base leading-[2] tracking-wide font-light">{{ activePhoto.description }}</p>
             <button @click="closeLightbox" class="mt-12 text-[10px] tracking-[0.3em] border border-white/30 px-8 py-3 hover:bg-white hover:text-black transition-all duration-300 uppercase">
@@ -172,7 +171,7 @@ import { ref } from 'vue'
 
 const activeTab = ref('color')
 
-// 彩色組數據 (c1-c9)
+// 彩色組數據 (c1-c9) - 已全數改為相對路徑
 const colorTopAwards = ref([
   { 
     award: '金獎', title: '縫紉', author: '謝富安', school: '世新大學',
