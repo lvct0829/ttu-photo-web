@@ -2,8 +2,8 @@
   <div class="bg-black min-h-screen pt-14 p-0 relative overflow-x-hidden text-white font-sans">
     
     <div class="relative w-full z-0">
-      <img src="poster.png" class="w-full h-auto object-contain block relative z-0" />
-      <img src="overlay.png" class="absolute top-0 left-0 w-full h-auto z-10 pointer-events-none block" />
+      <img src="/poster.png" class="w-full h-auto object-contain block relative z-0" />
+      <img src="/overlay.png" class="absolute top-0 left-0 w-full h-auto z-10 pointer-events-none block" />
 
       <div class="absolute inset-0 z-40 pointer-events-none flex flex-col justify-start pt-[55%] px-[10%] md:px-[15%] gap-20 md:gap-32">
         <div class="reveal-el reveal-left text-left w-full">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="relative bg-black -mt-[35%] md:-mt-[75%] z-30 pb-32">
-      <div class="absolute inset-0 z-0 opacity-30 bg-[url('poster.png')] bg-cover bg-fixed bg-center"></div>
+      <div class="absolute inset-0 z-0 opacity-30 bg-[url('/poster.png')] bg-cover bg-fixed bg-center"></div>
 
       <div class="relative z-10">
 
@@ -149,7 +149,7 @@
           <div class="w-full md:w-3/5 flex justify-center">
             <img :src="activePhoto.src" class="max-h-[60vh] md:max-h-[80vh] w-auto shadow-2xl object-contain" />
           </div>
-          <div class="w-full md:w-2/5 text-left bg-black/60 md:bg-transparent p-8 rounded-lg border border-white/5 md:border-none">
+          <div class="w-full md:w-2/5 text-left bg-black/60 md:bg-transparent p-8 rounded-lg">
             <span v-if="activePhoto.award" class="text-xs font-bold tracking-[0.2em] block mb-3" :class="activePhoto.colorClass">{{ activePhoto.award }}</span>
             <h4 class="text-3xl md:text-4xl font-serif mb-2 text-white">{{ activePhoto.title }}</h4>
             <p class="text-[#e6a23c]/80 text-sm mb-6 tracking-widest">{{ activePhoto.author }} ｜ {{ activePhoto.school }}</p>
@@ -171,32 +171,32 @@ import { ref } from 'vue'
 
 const activeTab = ref('color')
 
-// 彩色組數據 (c1-c9) - 已全數改為相對路徑
+// 彩色組數據 (c1-c9) - 已全部加上開頭斜線，配合 Vite Base 設定
 const colorTopAwards = ref([
   { 
     award: '金獎', title: '縫紉', author: '謝富安', school: '世新大學',
     description: '從構圖、調整光圈與快門，到對焦的過程中，奶奶操作縫紉機的手從未停歇。我相信她縫補的不只是衣物，更是縫著歲月，縫著生活裡一針一線的痕跡。',
-    src: 'photos/c1.jpg', colorClass: 'text-yellow-400' 
+    src: '/photos/c1.jpg', colorClass: 'text-yellow-400' 
   },
   { 
     award: '銀獎', title: '闖入者', author: '施竣友', school: '大同大學',
     description: '在灰暗深邃的幾何迴廊裡，一抹鮮豔的紅闖入視野。按下快門，將這短暫的交錯凝結，在無聲的建築中留住了生命的流動與瞬間的色彩。',
-    src: 'photos/c2.jpg', colorClass: 'text-gray-300' 
+    src: '/photos/c2.jpg', colorClass: 'text-gray-300' 
   },
   { 
     award: '銅獎', title: '瞬息光廊', author: '林里行', school: '大同大學',
     description: '午後的金黃餘暉穿過樹梢，把走廊鋪成了一條光之路。這種魔幻的光影轉瞬即逝，我選擇按下快門，把這份溫暖定格下來。這張照片不只是記錄，更是為了給那天的記憶找一個安靜的歸宿。',
-    src: 'photos/c3.jpg', colorClass: 'text-amber-600' 
+    src: '/photos/c3.jpg', colorClass: 'text-amber-600' 
   }
 ])
 
 const colorHonorable = ref([
-  { award: '佳作', title: '榕下的記憶', author: '鄭安妤', school: '大同大學', description: '盤根錯節的樹根與磚拱共生。站在樹影下，感受光斑在地面舞動的靜謐。拍下這幕，讓這份與歲月共處的安寧，成為記憶中珍貴的一角。', src: 'photos/c4.jpg' },
-  { award: '佳作', title: '巡航', author: '楊佳穎', school: '大同大學', description: '廣闊海面在陽光下閃耀，一艘警艇緩緩巡行其間。遠方城市與橋梁若隱若現，在寧靜的水域裡，守護與日常悄然並存。', src: 'photos/c5.jpg' },
-  { award: '佳作', title: '背影', author: '謝富安', school: '世新大學', description: '阿嬤提著剛買的菜，沿著市場的軌道慢慢走回家。', src: 'photos/c6.jpg' },
-  { award: '佳作', title: '燼中的航向', author: '沈瑞文', school: '靜宜大學', description: '橘紅碎火與白煙炸出翻湧的浪，北港虎爺於炮陣中破浪前行。極致的喧嘩裡，信眾掩耳屏息。在最鼎沸的時刻鬧中取靜，信仰浮出水面，將漫天烽火凝結為無聲的虔誠。', src: 'photos/c7.jpg' },
-  { award: '佳作', title: '雲下', author: '簡嘉圻', school: '照海華德福實業教育機構', description: '就算此刻被雲遮蔽，光也從未離開。它只是躲在層層翻之後，等你抬頭。', src: 'photos/c8.jpg' },
-  { award: '佳作', title: '昨日', author: '顏宇沛', school: '大同大學', description: '昨日尚未遠去，卻已無法觸及，只剩下模糊的片段定格在回憶裡。', src: 'photos/c9.jpg' }
+  { award: '佳作', title: '榕下的記憶', author: '鄭安妤', school: '大同大學', description: '盤根錯節的樹根與磚拱共生。站在樹影下，感受光斑在地面舞動的靜謐。拍下這幕，讓這份與歲月共處的安寧，成為記憶中珍貴的一角。', src: '/photos/c4.jpg' },
+  { award: '佳作', title: '巡航', author: '楊佳穎', school: '大同大學', description: '廣闊海面在陽光下閃耀，一艘警艇緩緩巡行其間。遠方城市與橋梁若隱若現，在寧靜的水域裡，守護與日常悄然並存。', src: '/photos/c5.jpg' },
+  { award: '佳作', title: '背影', author: '謝富安', school: '世新大學', description: '阿嬤提著剛買的菜，沿著市場的軌道慢慢走回家。', src: '/photos/c6.jpg' },
+  { award: '佳作', title: '燼中的航向', author: '沈瑞文', school: '靜宜大學', description: '橘紅碎火與白煙炸出翻湧的浪，北港虎爺於炮陣中破浪前行。極致的喧嘩裡，信眾掩耳屏息。在最鼎沸的時刻鬧中取靜，信仰浮出水面，將漫天烽火凝結為無聲的虔誠。', src: '/photos/c7.jpg' },
+  { award: '佳作', title: '雲下', author: '簡嘉圻', school: '照海華德福實業教育機構', description: '就算此刻被雲遮蔽，光也從未離開。它只是躲在層層翻之後，等你抬頭。', src: '/photos/c8.jpg' },
+  { award: '佳作', title: '昨日', author: '顏宇沛', school: '大同大學', description: '昨日尚未遠去，卻已無法觸及，只剩下模糊的片段定格在回憶裡。', src: '/photos/c9.jpg' }
 ])
 
 // 黑白組數據 (b1-b5)
@@ -204,23 +204,23 @@ const bwTopAwards = ref([
   { 
     award: '金獎', title: '時間的切片', author: '簡嘉圻', school: '照海華德福實業教育機構',
     description: '如果把一段旅程攤開， 它或許就是這樣—— 一格一格地被保存。 定格不是停止， 而是替流動留下一次呼吸。',
-    src: 'photos/b1.jpg', colorClass: 'text-yellow-400' 
+    src: '/photos/b1.jpg', colorClass: 'text-yellow-400' 
   },
   { 
     award: '銀獎', title: '過客', author: '謝富安', school: '世新大學',
     description: '人們撐著傘在雨中匆匆而行，與櫥窗裡的模特擦肩而過，成為彼此生活中的過客。',
-    src: 'photos/b2.jpg', colorClass: 'text-gray-300' 
+    src: '/photos/b2.jpg', colorClass: 'text-gray-300' 
   },
   { 
     award: '銅獎', title: 'Cyber Taipei 賽博台北', author: '沈瑞文', school: '靜宜大學',
     description: '慢快門拉出放射光軌，車流與大樓化極速賽博龐克。光影洪流中，捷運、車流、現代高樓與台式老公寓靜默並存。光線縫合了新舊時代，凝結台北科幻與真實。',
-    src: 'photos/b3.jpg', colorClass: 'text-amber-600' 
+    src: '/photos/b3.jpg', colorClass: 'text-amber-600' 
   }
 ])
 
 const bwHonorable = ref([
-  { award: '佳作', title: '手與鰭', author: '林思妤', school: '致理科技大學', description: '快門記錄下玻璃兩側的不同靈魂；孩子的探索、魟魚的游戲，在時間與水不同的流動介質中，定格特別的生命對話。', src: 'photos/b4.jpg' },
-  { award: '佳作', title: '驛站留白', author: '鄭丞晏', school: '大安高工', description: '月台指標前，旅人匆匆。巨大的幾何穹頂宛如時間的刻度，冷冽而深邃。將這繁忙車站的一瞬抽離色彩，讓不停歇的腳步在記憶中暫停。', src: 'photos/b5.jpg' }
+  { award: '佳作', title: '手與鰭', author: '林思妤', school: '致理科技大學', description: '快門記錄下玻璃兩側的不同靈魂；孩子的探索、魟魚的游戲，在時間與水不同的流動介質中，定格特別的生命對話。', src: '/photos/b4.jpg' },
+  { award: '佳作', title: '驛站留白', author: '鄭丞晏', school: '大安高工', description: '月台指標前，旅人匆匆。巨大的幾何穹頂宛如時間的刻度，冷冽而深邃。將這繁忙車站的一瞬抽離色彩，讓不停歇的腳步在記憶中暫停。', src: '/photos/b5.jpg' }
 ])
 
 const isLightboxOpen = ref(false)
