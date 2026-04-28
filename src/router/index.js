@@ -48,6 +48,12 @@ const router = createRouter({
       component: () => import('@/views/ExhibitionView.vue'),
       meta: { title: '光影之間' },
     },
+    {
+      path: '/game',
+      name: 'game',
+      component: () => import('@/views/GameView.vue'),
+      meta: { title: '彩蛋遊戲' },
+    },
     { path: '/m/home', name: 'm-home', component: () => import('../views/mobile/HomeViewForPhone.vue') },
     { path: '/m/about', name: 'm-about', component: () => import('../views/mobile/AboutViewForPhone.vue') },
     { path: '/m/member', name: 'm-member', component: () => import('../views/mobile/MemberViewForPhone.vue') },

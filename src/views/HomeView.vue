@@ -47,11 +47,13 @@
             <div class="relative">
               <div class="absolute -inset-16 bg-rust/15 rounded-full blur-[80px]"></div>
               
+              <router-link to="/game" class="relative block group">
               <img 
                 src="/logo.svg" 
                 alt="TTU PHOTO" 
-                class="relative w-48 h-48 md:w-64 md:h-64 object-contain scale-125 md:scale-[5.0] transform-gpu transition-transform duration-500" 
+                class="relative w-48 h-48 md:w-64 md:h-64 object-contain scale-125 md:scale-[5.0] transform-gpu transition-transform duration-500 group-hover:scale-[5.2] cursor-pointer" 
               />
+              </router-link>
             </div>
           </div>
         </div>
