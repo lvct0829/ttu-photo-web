@@ -2,13 +2,13 @@
   <div>
     <section
       class="relative overflow-hidden noise-bg min-h-[calc(100vh-3.5rem)] flex items-center py-16 md:py-0 bg-cover bg-center"
-      style="background-image: url('IMG_9651.jpg');"
+      style="background-image: url('/IMG_9651.jpg');"
     >
-      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="absolute inset-0 bg-black/55 md:bg-black/40"></div>
 
       <div class="relative z-10 max-w-6xl mx-auto px-6 w-full md:-mt-8">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-          <div class="md:col-span-7">
+          <div class="md:col-span-7 order-2 md:order-1">
             <div class="reveal flex items-center gap-3 mb-4 md:mb-6">
               <span class="inline-block px-2.5 py-1 text-[11px] font-display font-semibold uppercase tracking-[0.2em] text-rust border border-rust/30 rounded-sm">
                 Photography Club
@@ -20,9 +20,18 @@
                 
               </div>
             </div>
-            <h1 class="reveal reveal-d1 font-display text-[clamp(3.2rem,9vw,6rem)] font-extrabold text-white leading-tight tracking-tight whitespace-nowrap">
+            <h1 class="reveal reveal-d1 font-display text-[clamp(2.2rem,9vw,6rem)] font-extrabold text-white leading-tight tracking-tight md:whitespace-nowrap">
               大同大學 攝影社
             </h1>
+
+            <router-link to="/game" class="md:hidden flex justify-center items-center my-0 -translate-x-4 group">
+              <img 
+                src="/logo.svg" 
+                alt="TTU PHOTO" 
+                class="w-80 h-80 object-contain scale-[3.0] transform-gpu transition-transform duration-500 group-hover:scale-[3.2] cursor-pointer" 
+              />
+            </router-link>
+
             <p class="reveal reveal-d2 mt-4 md:mt-8 text-base md:text-xl font-medium text-white leading-relaxed max-w-md drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
               透過鏡頭，記錄那些被時光遺忘的細碎美好。<br>
               在這裡，每一張照片都是一段獨一無二的故事。
@@ -43,17 +52,19 @@
             </div>
           </div>
 
-          <div class="reveal reveal-d4 md:col-span-5 flex justify-center items-center">
+          <div class="reveal reveal-d4 hidden md:flex md:col-span-5 order-1 md:order-2 justify-center items-center">
             <div class="relative">
               <div class="absolute -inset-16 bg-rust/15 rounded-full blur-[80px]"></div>
-              
-              <router-link to="/game" class="relative block group">
-              <img 
-                src="/logo.svg" 
-                alt="TTU PHOTO" 
-                class="relative w-48 h-48 md:w-64 md:h-64 object-contain scale-125 md:scale-[5.0] transform-gpu transition-transform duration-500 group-hover:scale-[5.2] cursor-pointer" 
-              />
-              </router-link>
+
+              <div class="relative w-64 h-64 overflow-visible">
+                <router-link to="/game" class="absolute inset-0 flex items-center justify-center group">
+                  <img 
+                    src="/logo.svg" 
+                    alt="TTU PHOTO" 
+                    class="w-full h-full object-contain scale-[5.0] transform-gpu transition-transform duration-500 group-hover:scale-[5.2] cursor-pointer" 
+                  />
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -80,7 +91,6 @@
               v-for="(item, i) in whatWeDoItems"
               :key="item.title"
               @click="activeIndex = i"
-              @mouseenter="activeIndex = i"
               class="group cursor-pointer p-5 rounded-2xl transition-all duration-300"
               :class="activeIndex === i ? 'bg-ink/5 shadow-sm' : 'hover:bg-ink/5 border-transparent'"
             >
@@ -108,7 +118,7 @@
             </div>
           </div>
 
-          <div class="md:col-span-7 relative aspect-[4/3] md:aspect-[16/11] rounded-2xl overflow-hidden shadow-2xl bg-ink/10">
+          <div class="md:col-span-7 relative aspect-[3/2] rounded-2xl overflow-hidden shadow-2xl bg-ink/10">
             <transition-group name="fade-img">
               <img
                 v-for="(item, i) in whatWeDoItems"
@@ -135,10 +145,10 @@
           <h2 class="mt-2 text-3xl md:text-4xl font-bold text-ink">114 下學期 活動</h2>
         </div>
 
-        <div class="scroll-reveal w-full flex flex-row rounded-2xl overflow-hidden shadow-2xl border border-ink/10 bg-white" ref="addRevealRef">
-          <img src="/01.jpg" alt="社課 1" class="w-1/3 h-auto object-cover block" />
-          <img src="/02.jpg" alt="社課 2" class="w-1/3 h-auto object-cover block" />
-          <img src="/03.jpg" alt="社課 3" class="w-1/3 h-auto object-cover block" />
+        <div class="scroll-reveal w-full flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl border border-ink/10 bg-white" ref="addRevealRef">
+          <img src="/01.jpg" alt="社課 1" class="w-full md:w-1/3 h-auto object-cover block" />
+          <img src="/02.jpg" alt="社課 2" class="w-full md:w-1/3 h-auto object-cover block" />
+          <img src="/03.jpg" alt="社課 3" class="w-full md:w-1/3 h-auto object-cover block" />
         </div>
       </div>
     </section>

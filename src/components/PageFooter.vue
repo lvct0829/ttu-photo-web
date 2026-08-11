@@ -38,25 +38,7 @@
             >年度展覽</RouterLink
           >
 
-          <RouterLink
-            to="/m/home"
-            class="ml-2 px-4 py-2 bg-ink text-paper rounded-full text-[11px] flex items-center gap-2 hover:bg-[#e6a23c] hover:text-white transition-all duration-300 shadow-sm active:scale-95"
-          >
-            <svg
-              class="w-3.5 h-3.5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-              ></path>
-            </svg>
-            手機版模式
-          </RouterLink>
+         
         </div>
 
         <div class="text-left md:text-right">

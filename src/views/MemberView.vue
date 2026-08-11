@@ -3,10 +3,28 @@
     
     <div class="text-center mb-10 reveal-fade">
       <h1 class="text-3xl md:text-4xl font-bold text-white mb-3 tracking-widest font-serif">團隊幹部</h1>
-      <p class="text-[#e6a23c] tracking-[0.2em] text-xs md:text-sm uppercase opacity-80">114學年 幹部成員</p>
+      <p class="text-[#e6a23c] tracking-[0.2em] text-xs md:text-sm uppercase opacity-80">{{ currentSessionLabel }} 幹部成員</p>
+
+      <div class="flex items-center justify-center gap-2 mt-6">
+        <button
+          v-for="session in sessionOrder"
+          :key="session"
+          @click="selectSession(session)"
+          class="px-5 py-2 rounded-full text-sm tracking-widest border transition-all duration-300"
+          :class="session === currentSession
+            ? 'bg-[#e6a23c] text-black border-[#e6a23c] font-bold'
+            : 'text-white/50 border-white/15 hover:text-[#e6a23c] hover:border-[#e6a23c]/50'"
+        >
+          第{{ session }}屆
+        </button>
+      </div>
     </div>
 
-    <div class="w-full max-w-[1300px] flex items-center gap-2 md:gap-10 reveal-up">
+    <div v-if="!members.length" class="text-white/40 text-sm md:text-base tracking-wide reveal-up">
+      這屆的幹部資料還在準備中，敬請期待。
+    </div>
+
+    <div v-else class="w-full max-w-[1300px] flex items-center gap-2 md:gap-10 reveal-up">
       
       <button @click="prevMember" class="shrink-0 z-30 p-2 text-white/20 hover:text-[#e6a23c] transition-all duration-300 hidden md:block">
         <svg class="w-10 h-10 lg:w-16 lg:h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -16,9 +34,9 @@
 
       <div class="flex-grow bg-[#080808] border border-white/10 shadow-2xl overflow-hidden rounded-[30px] md:rounded-[40px] relative">
         <Transition name="slide-fade" mode="out-in">
-          <div :key="currentIndex" class="flex flex-col md:flex-row items-stretch md:h-[600px] lg:h-[700px]">
+          <div :key="`${currentSession}-${currentIndex}`" class="flex flex-col md:flex-row items-stretch md:h-[600px] lg:h-[700px]">
             
-            <div class="w-full md:w-auto h-[450px] md:h-full md:aspect-[2/3] overflow-hidden relative shrink-0">
+            <div class="w-full md:w-auto aspect-[2/3] md:h-full overflow-hidden relative shrink-0">
               <img :src="currentMember.photo" :alt="currentMember.title" class="w-full h-full object-cover transition-transform duration-1000" />
               <div class="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-[#080808] opacity-70"></div>
             </div>
@@ -61,150 +79,42 @@
       </button>
 
     </div>
+
+    <div v-if="members.length" class="w-full max-w-[1300px] flex gap-3 mt-6 md:hidden">
+      <button @click="prevMember" class="flex-1 py-4 bg-white/5 border border-white/10 rounded-2xl text-white/40 text-sm font-bold active:bg-white/10 transition-all">
+        ← 上一位
+      </button>
+      <button @click="nextMember" class="flex-1 py-4 bg-[#e6a23c]/10 border border-[#e6a23c]/30 rounded-2xl text-[#e6a23c] text-sm font-bold active:bg-[#e6a23c]/20 transition-all">
+        下一位 →
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { membersBySession, sessionOrder } from '@/data/members.js'
 
-const members = ref([
-  {
-    name: '鄭安妤',
-    title: '社長',
-    photo: 'president.jpeg', 
-    bio: `對我來說社團和課業是並行的存在 缺一不可
-玩的時候玩 該認真的時候認真
-誰都不能阻止我帶相機出去玩！
-玩到哪拍到哪 假日不出門就渾身不對勁
-每個東西都能拍 朋友就是我的模特兒
-
-#IE切換自如
-明明是個E人，但有的時候比I人還I
-不是故意不理人、擺臭臉，只是有時候累了
-人在魂不在 可以把她喚醒 但不一定會成功
-是個自來熟又社恐的矛盾仔
-
-#秒回仔
-不管什麼時候傳訊息幾乎都秒回
-除非在睡覺 回完她訊息要趕快滑掉 不然回不完
-
-#緊張大師
-小小的事都會很緊張開始喊人幫忙 最後發現其實不用
-
-#幼稚鬼
-無聊的時候喜歡搗蛋 被她鎖在社辦外是正常現象
-
-#看起來很閒
-跟她熟了會發現 她假日不是在社團 就是在去玩的路上
-別問她為什麼可以這麼悠哉 你會怕…
-
-#好奇寶寶
-她就是一個什麼都會一點 三分鐘熱度的標準典範
-但莫名奇妙的是 每個都有一定的水準
-她自己常常也覺得奇怪 第一次玩卻像個老手
-
-#樣樣行樣樣不行
-很多興趣是她的熱愛 但同時也是致命傷`,
-    socials: [
-      { label: 'anyu_zheng', url: 'https://www.instagram.com/anyu_zheng' },
-      { label: 'anyu_photo', url: 'https://www.instagram.com/anyu_photo' }
-    ]
-  },
-  {
-    name: '邱宥彥',
-    title: '副社長',
-    photo: 'vp.jpg',
-    bio: `哈嘍 我機材2B的邱宥諺
-興趣是拍照、打鼓、騎車
-本人比較內向 但熟了之後會挺瘋的
-有喜歡騎車的可以找我一起騎～`,
-    socials: []
-  },
-  {
-    name: '黃宥傑',
-    title: '副社長/器材長',
-    photo: 'vp2.JPG',
-    bio: `嗨～～我是資工2B的黃宥傑
-一個愛作夢ㄉ人
-網頁有問題麻煩聯繫我（？
-
-＃lvct0829
-＃INFP
-＃什麼都會,但什麼都不精通
-＃拖延症末期
-＃我想睡覺`,
-    socials: [
-      { label: 'lvct0829', url: 'https://www.instagram.com/lvct0829' }
-    ]
-  }, 
-  {
-    name: '施竣友',
-    title: '器材/文書',
-    photo: 'gear.jpg', 
-    bio: `大家好我是機材2A的施竣友
-目前擔任文書與器材
-是大學才開始接觸相機的
-喜歡拍攝各式各樣奇奇怪怪的東西。`,
-    socials: []
-  },
-  {
-    name: '鄒倢宜',
-    title: '總務',
-    photo: 'IMG_5656.jpg',
-    bio: `大家好～我是電機二B的鄒倢宜
-目前在攝影社擔任總務📸
-平常除了跟著攝影社一起外拍
-到處拍拍風景、人像，我也很常跑去棒球場拍比賽⚾️
-記錄球員在場上的每個精彩瞬間！
-對我來說，攝影就是把那些轉瞬即逝的畫面好好保存下來✨`,
-    socials: [
-       { label: 'jieyi__0602', url: 'https://www.instagram.com/jieyi__0602' }
-    ]
-  },
-  {
-    name: '張芯慈',
-    title: '美宣/公關',
-    photo: 'IMG_1565.jpg',
-    bio: `我是美宣兼公關 媒設系 2B 的張芯慈✨ 
-
-我平常很喜歡跳舞 💃  
-在舞台上釋放能量 是我最享受的時刻！  
-
-同時也是個小小追星族 ⭐  
-不管是演唱會、應援活動，還是新歌舞台 都會熱血跟進🔥  
-
-另外我也很喜歡攝影 📸  
-喜歡用鏡頭記錄生活裡的細節和那些美好的瞬間`,
-    socials: [
-      { label: 'xicivi__', url: 'https://www.instagram.com/xicivi__' }
-    ]
-  },
-  {
-    name: '陳采融',
-    title: '美宣/公關',
-    photo: 'IMG_7555.JPG',
-    bio: `能有時間自己“一個人”出門的時候喜歡找幾個地方走走拍照
-正在學習拍人像、周邊中
-（買了很多也想讓它們有好看的照片）
-＃我是I人！
-＃遊戲控
-＃甜文小說
-＃失蹤人口
-＃耿鬼`,
-    socials: [
-      { label: 'vivi＿940521', url: 'https://www.instagram.com/vivi_940521' }
-    ]
-  }
-])
-
+// 預設顯示最新一屆（sessionOrder 已由新到舊排序）
+const currentSession = ref(sessionOrder[0])
 const currentIndex = ref(0)
+
+const members = computed(() => membersBySession[currentSession.value]?.members ?? [])
+const currentSessionLabel = computed(() => membersBySession[currentSession.value]?.label ?? '')
 const currentMember = computed(() => members.value[currentIndex.value])
 
+const selectSession = (session) => {
+  currentSession.value = session
+  currentIndex.value = 0
+}
+
 const nextMember = () => {
+  if (!members.value.length) return
   currentIndex.value = (currentIndex.value + 1) % members.value.length
 }
 
 const prevMember = () => {
+  if (!members.value.length) return
   currentIndex.value = (currentIndex.value - 1 + members.value.length) % members.value.length
 }
 
