@@ -21,8 +21,42 @@ export const membersBySession = {
     label: '115學年',
     members: [
       {
+        name: '黃宥傑',
+        title: '社長/器材',
+        photo: trueURL('img/member/25/lvct.JPG'),
+        bio: `＃lvct0829
+＃INFP
+
+#萬能又不能
+興趣廣泛到自己都數不清楚
+寫過的技能點滿滿一整排
+但認真要拿出一個「精通」的
+好像都還差那麼一點點
+不是不會 只是懶得練到底
+
+#拖延症晚期病患
+deadline前一秒才是靈感爆發的黃金時刻
+明明知道早點做比較輕鬆
+但身體就是很誠實地選擇先躺一下
+「等一下就做」是我最常說的謊
+
+#嗜睡體質
+一天二十四小時
+扣掉睡覺剩下的都在想睡覺
+清醒的時候在想睡覺
+睡覺的時候在想睡更久
+人生格言：先睡再說
+
+#INFP日常
+腦內小劇場永遠比嘴巴說出來的多
+表面很隨和 內心os卻在瘋狂運轉
+夢想很大 行動力跟不太上
+但真的認真起來 還是能一次做完該做的事`,
+        socials: [{ label: 'lvct_err', url: 'https://www.instagram.com/lvct_err' }]
+      },
+      {
         name: '鄭安妤',
-        title: '社長/美宣、公關',
+        title: '副社長/美宣、公關',
         photo: trueURL('img/member/25/zhenganyu.jpeg'),
         bio: `對我來說社團和課業是並行的存在 缺一不可
 玩的時候玩 該認真的時候認真

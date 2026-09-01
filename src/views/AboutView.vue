@@ -70,6 +70,73 @@
         </div>
       </section>
 
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent reveal-fade" ref="addRevealRef"></div>
+
+      <section class="reveal-up flex flex-col items-center text-center" ref="addRevealRef">
+        <h2 class="text-2xl md:text-3xl tracking-[0.2em] font-light text-[#e6a23c] mb-4 flex items-center gap-4">
+          <span class="w-12 h-px bg-[#e6a23c] hidden md:block"></span>
+          合作夥伴
+          <span class="w-12 h-px bg-[#e6a23c] hidden md:block"></span>
+        </h2>
+        <p class="text-white/50 text-xs tracking-[0.3em] uppercase mb-14">Official Partner — NIKON</p>
+
+        <div class="w-full max-w-4xl border border-[#e6a23c]/30 rounded-xl p-10 md:p-16 bg-gradient-to-b from-white/[0.03] to-transparent relative overflow-hidden">
+
+          <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#e6a23c]/10 rounded-full blur-3xl"></div>
+
+          <div class="relative z-10 flex flex-col items-center gap-6 mb-14">
+            <img
+              :src="`${basePath}nikon-logo.svg`"
+              alt="Nikon"
+              class="h-40 md:h-50 object-contain opacity-90"
+            />
+            <p class="text-white/80 text-[15px] md:text-lg leading-[2] tracking-wider max-w-2xl">
+              本社很榮幸與 Nikon 台灣正式合作，不定期邀請 Nikon 專業講師舉辦器材體驗與技術講座，
+              讓社員能親身接觸最新機身鏡頭、深入學習各類攝影技巧。
+            </p>
+          </div>
+
+          <!-- 活動時間軸 -->
+          <div class="relative z-10 flex flex-col divide-y divide-white/10 text-left max-w-2xl mx-auto">
+
+            <div class="flex items-center gap-6 py-6 group">
+              <div class="flex-shrink-0 w-20 md:w-24 text-[#e6a23c] font-serif text-lg md:text-xl tracking-wider">
+                10/15
+              </div>
+              <div class="flex-1">
+                <h3 class="text-white text-base md:text-lg tracking-wide font-medium group-hover:text-[#e6a23c] transition-colors">
+                  NIKON 器材大會
+                </h3>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-6 py-6 group">
+              <div class="flex-shrink-0 w-20 md:w-24 text-[#e6a23c] font-serif text-lg md:text-xl tracking-wider">
+                10/17
+              </div>
+              <div class="flex-1">
+                <h3 class="text-white text-base md:text-lg tracking-wide font-medium group-hover:text-[#e6a23c] transition-colors">
+                  NIKON 旅行風景外拍
+                </h3>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-6 py-6 group">
+              <div class="flex-shrink-0 w-20 md:w-24 text-[#e6a23c] font-serif text-lg md:text-xl tracking-wider">
+                11/05
+              </div>
+              <div class="flex-1">
+                <h3 class="text-white text-base md:text-lg tracking-wide font-medium group-hover:text-[#e6a23c] transition-colors">
+                  NIKON 運動攝影
+                </h3>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
     </div>
   </div>
 </template>

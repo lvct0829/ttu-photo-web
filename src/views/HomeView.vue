@@ -79,6 +79,36 @@
       <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-chalk to-transparent"></div>
     </section>
 
+    <section class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div
+          class="scroll-reveal relative overflow-hidden rounded-2xl bg-ink"
+          ref="addRevealRef"
+        >
+          <div class="absolute inset-0 bg-gradient-to-br from-rust/25 via-transparent to-rust/10"></div>
+          <div class="absolute -top-24 -right-24 w-72 h-72 bg-rust/20 rounded-full blur-[100px]"></div>
+
+          <div class="relative z-10 flex flex-col items-center text-center px-8 py-16 md:py-20">
+            <span class="text-[11px] md:text-xs uppercase tracking-[0.3em] text-rust font-bold mb-6">
+              Official Partner
+            </span>
+
+            <div class="w-40 md:w-56 h-16 md:h-20 mb-8 flex items-center justify-center">
+              <img
+                :src="`${basePath}nikon-logo.svg`"
+                alt="Nikon"
+                class="max-w-full max-h-full w-auto h-auto object-contain brightness-0 invert"
+              />
+            </div>
+
+            <p class="text-paper/85 text-base md:text-xl font-medium leading-relaxed max-w-xl">
+              大同大學攝影社與 Nikon 台灣正式合作，攜手推廣攝影文化。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="py-20 md:py-28">
       <div class="max-w-6xl mx-auto px-6">
         <div class="mb-12 scroll-reveal" ref="addRevealRef">
@@ -142,16 +172,17 @@
       <div class="max-w-5xl mx-auto px-6">
         <div class="mb-10 scroll-reveal" ref="addRevealRef">
           <span class="text-[11px] uppercase tracking-[0.2em] text-moss font-semibold">Course</span>
-          <h2 class="mt-2 text-3xl md:text-4xl font-bold text-ink">114 下學期 活動</h2>
+          <h2 class="mt-2 text-3xl md:text-4xl font-bold text-ink">115 上學期 活動</h2>
         </div>
 
         <div class="scroll-reveal w-full flex flex-col md:flex-row rounded-2xl overflow-hidden shadow-2xl border border-ink/10 bg-white" ref="addRevealRef">
-          <img src="/01.jpg" alt="社課 1" class="w-full md:w-1/3 h-auto object-cover block" />
-          <img src="/02.jpg" alt="社課 2" class="w-full md:w-1/3 h-auto object-cover block" />
-          <img src="/03.jpg" alt="社課 3" class="w-full md:w-1/3 h-auto object-cover block" />
+          <img src="/001.jpg" alt="社課 1" class="w-full md:w-1/3 h-auto object-cover block" />
+          <img src="/002.jpg" alt="社課 2" class="w-full md:w-1/3 h-auto object-cover block" />
+          <img src="/003.jpg" alt="社課 3" class="w-full md:w-1/3 h-auto object-cover block" />
         </div>
       </div>
     </section>
+
   </div>
 </template>
 
@@ -159,6 +190,9 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import { faDiscord, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+
+// 獲取 Vite 設定中的 base 路徑,確保部署在子路徑時圖片路徑正確
+const basePath = import.meta.env.BASE_URL
 
 const activeIndex = ref(0)
 const whatWeDoItems = [
