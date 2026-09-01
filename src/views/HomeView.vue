@@ -97,7 +97,7 @@
               <img
                 :src="`${basePath}nikon-logo.svg`"
                 alt="Nikon"
-                class="max-w-full max-h-full w-auto h-auto object-contain brightness-0 invert"
+                class="max-w-full max-h-full w-auto h-auto object-contain opacity-90"
               />
             </div>
 
